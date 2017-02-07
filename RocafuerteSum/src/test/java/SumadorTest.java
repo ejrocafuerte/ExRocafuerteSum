@@ -21,4 +21,25 @@ public class SumadorTest {
 	
 		assertEquals(5,s2.Suma("3,2"));
 	 }
+	@Test
+	public final void whenOneNumberIsUsedThenReturnValueIsThatSameNumber() {
+		Sumado s2 = spy(new Sumado());
+		int []b={3,0};
+		
+		when(s2.convertidor("3")).thenReturn(b);
+	
+		assertEquals(3, s2.Suma("3"));
+	}
+
+	@Test
+	public final void whenTwoNumbersAreUsedThenReturnValueIsTheirSum() {
+		Sumado s2 = spy(new Sumado());
+		int []b={3,6};
+		
+		when(s2.convertidor("3,6")).thenReturn(b);
+	
+		
+		assertEquals(3+6, s2.Suma("3,6"));
+	}
+	
 }
