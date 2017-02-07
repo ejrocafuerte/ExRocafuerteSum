@@ -1,27 +1,24 @@
-import static org.mockito.Mockito.spy;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
+
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
-import org.mockito.Mock;
+
+import org.mockito.Mockito;
 
 public class SumadorTest {
 	@Rule 
 	public MockitoRule mockitoRule = MockitoJUnit.rule();
 	@Test
 	 public void test()  {
-		int[] a={2,1};
-		int[] b={3,2};
-		Sumador s1 = spy(new Sumador());
-		when(s1.convertidor("2,1")).thenReturn(a);
-		when(s1.convertidor("3,2")).thenReturn(b);
+		Sumado s2 = spy(new Sumado());
+		int []b={3,2};
 		
-		assertEquals(s1.Suma("2,3"),5);
-		
-		
+		when(s2.convertidor("3,2")).thenReturn(b);
+	
+		assertEquals(5,s2.Suma("3,2"));
 	 }
 }
